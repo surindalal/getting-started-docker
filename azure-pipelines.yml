@@ -24,6 +24,7 @@ stages:
       displayName: 'Build an image of $(Build.SourcesDirectory) and $(imageRepository) and $(dockerRegistryServiceConnection)'
       inputs:
         command: buildAndPush
+        repository : surindevopdocker
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         containerRegistry: dockerhubconnection
         tags: |
