@@ -30,7 +30,7 @@ stages:
     - task: Docker@2
       inputs: 
         command: push
-        containerRegistry: $(containerRegistryServiceConnection)
-        repository: $(imageRepository)
+        containerRegistry: dockerhubconnection
+        repository: firstdochubrepo
         tags: |
           $(tag)
