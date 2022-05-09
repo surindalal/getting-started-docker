@@ -25,15 +25,13 @@ stages:
       displayName: 'Build an image of $(Build.SourcesDirectory) and $(imageRepository) and $(dockerRegistryServiceConnection)'
       inputs:
         command: build
-        imageName: '$(ImageName)'
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
     - task: Docker@2
       inputs: 
         command: push
-        imageName: '$(ImageName)'
         containerRegistry: dockerhubconnection
-        repository: 'surindevopdocker/dalal'
+        repository: '/surindevopdocker/dalal'
         tags: |
           $(tag)
