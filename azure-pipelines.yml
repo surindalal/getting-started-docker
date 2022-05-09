@@ -26,11 +26,11 @@ stages:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
-          dalal
+          surindevopdocker
     - task: Docker@2
       inputs: 
         command: push
         containerRegistry: dockerhubconnection
         repository: surindevopdocker
         tags: |
-          dalal
+          surindevopdocker
