@@ -10,6 +10,7 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
+  imageName: 'surindevopdocker/demo:$(Build.BuildId)'
 
 stages:
 - stage: Build
@@ -24,13 +25,15 @@ stages:
       displayName: 'Build an image of $(Build.SourcesDirectory) and $(imageRepository) and $(dockerRegistryServiceConnection)'
       inputs:
         command: build
+        imageName: '$(ImageName)'
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
-          surindevopdocker
+          $(tag)
     - task: Docker@2
       inputs: 
         command: push
+        imageName: '$(ImageName)'
         containerRegistry: dockerhubconnection
         repository: surindevopdocker
         tags: |
-          surindevopdocker
+          $(tag)
