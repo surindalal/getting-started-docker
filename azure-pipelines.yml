@@ -34,6 +34,6 @@ stages:
         command: push
         imageName: '$(ImageName)'
         containerRegistry: dockerhubconnection
-        repository: new-repo
+        repository: 'surindevopdocker/dalal'
         tags: |
           $(tag)
