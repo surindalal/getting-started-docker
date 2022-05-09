@@ -10,7 +10,7 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
-  imageName: 'surindevopdocker/demo:$(Build.BuildId)'
+  imageName: 'demo:$(Build.BuildId)'
 
 stages:
 - stage: Build
@@ -34,6 +34,6 @@ stages:
         command: push
         imageName: '$(ImageName)'
         containerRegistry: dockerhubconnection
-        repository: surindevopdocker
+        repository: new-repo
         tags: |
           $(tag)
