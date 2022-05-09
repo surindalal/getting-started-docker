@@ -9,7 +9,7 @@ resources:
 - repo: self
 
 variables:
-  tag: 'surindevopdocker/dalal'
+  tag: 'test1'
 
 stages:
 - stage: Build
@@ -21,16 +21,8 @@ stages:
       name: customagentpool
     steps:
     - task: Docker@2
-      displayName: 'Build an image of $(Build.SourcesDirectory) and $(imageRepository) and $(dockerRegistryServiceConnection)'
-      inputs:
-        command: build
-        dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
-        tags: |
-          $(tag)
-    - task: Docker@2
       inputs: 
         repository: 'surindevopdocker/dalal'
         containerRegistry: dockerhubconnection
-        command: push      
-        tags: |
-          $(tag)
+        command: buildAndPush      
+        tags: $(appBuildNumber)
