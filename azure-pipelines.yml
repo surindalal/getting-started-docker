@@ -10,7 +10,6 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
-  imageName: '$(Build.BuildId)'
 
 stages:
 - stage: Build
@@ -32,6 +31,6 @@ stages:
       inputs: 
         command: push
         containerRegistry: dockerhubconnection
-        repository: '/surindevopdocker/dalal'
+        repository: 'surindevopdocker/dalal'
         tags: |
           $(tag)
