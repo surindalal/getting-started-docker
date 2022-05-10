@@ -25,5 +25,4 @@ stages:
         repository: 'surindevopdocker/dalal'
         containerRegistry: dockerhubconnection
         command: buildAndPush      
-        tags: |
-          $(Build.BUILDID)
+        tags: 'surinderdevopdocker/dalal:$(Build.BUILDID)'
