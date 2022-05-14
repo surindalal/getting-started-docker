@@ -22,6 +22,6 @@ stages:
     steps:
     - task: Docker@2
       inputs: 
-        containerRegistry: azureconnection
+        containerRegistry: AzureConnection
         command: buildAndPush      
         tags: 'demodocker$(Build.BUILDID)'
