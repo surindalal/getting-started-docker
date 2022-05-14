@@ -22,7 +22,7 @@ stages:
     steps:
     - task: Docker@2
       inputs: 
-        repository: 'dalalrepo'
+        repository: 'dalalrepo1'
         containerRegistry: AzureConnection
         command: buildAndPush      
         tags: 'demodocker$(Build.BUILDID)'
