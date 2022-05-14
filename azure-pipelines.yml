@@ -22,7 +22,6 @@ stages:
     steps:
     - task: Docker@2
       inputs: 
-        repository: 'surindevopdocker/dalal'
         containerRegistry: azureconnection
         command: buildAndPush      
         tags: 'demodocker$(Build.BUILDID)'
