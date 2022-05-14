@@ -22,7 +22,7 @@ stages:
     steps:
     - task: Docker@2
       inputs: 
-        repository: 'dalalrepo1'
+        repository: 'dalalsurindevopdocker'
         containerRegistry: dockerhubconnection
         command: buildAndPush      
         tags: 'demodocker$(Build.BUILDID)'
