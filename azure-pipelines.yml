@@ -11,9 +11,6 @@ resources:
 variables:
   tag: 'test1'
   AWS_REGION: 'us-east-1'
-  AWS_ACCOUNT_ID: '563845648428'
-  AWS_ACCESS_KEY_ID: 'AKIAYGR6R2AWACVKWC3E'
-  AWS_SECRET_ACCESS_KEY: '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'
 
 stages:
 - stage: Build
